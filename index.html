@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10182b" />
+    <title>Logic Lab | Python Boolean Practice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <nav class="topbar">
+        <a class="brand" href="#top" aria-label="Logic Lab home"><span class="brand-mark">λ</span> Logic Lab</a>
+        <div class="nav-stats"><span id="progress-text">0 / 4 levels</span><button id="reset-button" class="text-button" type="button">Reset progress</button></div>
+      </nav>
+
+      <section id="top" class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">A visual playground for Python</p>
+          <h1>Make logic<br /><em>click.</em></h1>
+          <p class="hero-description">Build a sturdy instinct for <code>and</code>, <code>or</code>, and <code>not</code>—one small experiment at a time.</p>
+          <a href="#levels" class="primary-button">Start exploring <span>↓</span></a>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="signal-card signal-one"><span>True</span><b>and</b><span>False</span></div>
+          <div class="signal-card signal-two"><span class="result-dot"></span><strong>False</strong></div>
+          <svg viewBox="0 0 400 290" class="logic-lines"><path d="M12 62 C130 62 125 141 207 141" /><path d="M12 230 C130 230 125 141 207 141" /><path d="M207 141 C275 141 275 140 388 140" /></svg>
+          <div class="gate">AND</div>
+          <span class="hero-orb orb-a"></span><span class="hero-orb orb-b"></span>
+        </div>
+      </section>
+
+      <section class="how-it-works">
+        <span class="section-kicker">How to use this lab</span>
+        <p>Tap values, watch the outcome change, then solve a quick challenge to unlock the next section.</p>
+      </section>
+
+      <section id="levels" class="levels-section">
+        <div class="section-heading"><div><p class="eyebrow">Your path</p><h2>Four building blocks.</h2></div><p class="progress-caption" id="progress-caption">Begin with level 1.</p></div>
+        <div id="level-list" class="level-list"></div>
+      </section>
+
+      <section class="reference-section">
+        <div><p class="eyebrow">Pocket reference</p><h2>The whole story<br />at a glance.</h2></div>
+        <div class="truth-reference">
+          <div class="reference-row reference-header"><span>A</span><span>B</span><span>A and B</span><span>A or B</span></div>
+          <div class="reference-row"><span>False</span><span>False</span><strong class="false">False</strong><strong class="false">False</strong></div>
+          <div class="reference-row"><span>False</span><span>True</span><strong class="false">False</strong><strong class="true">True</strong></div>
+          <div class="reference-row"><span>True</span><span>False</span><strong class="false">False</strong><strong class="true">True</strong></div>
+          <div class="reference-row"><span>True</span><span>True</span><strong class="true">True</strong><strong class="true">True</strong></div>
+        </div>
+      </section>
+
+      <footer><span>Made for curious Python beginners.</span><span>Try changing every input—mistakes are data.</span></footer>
+    </main>
+    <template id="level-template">
+      <article class="level-card">
+        <button class="level-summary" type="button" aria-expanded="false">
+          <span class="level-number"></span><span class="level-title-group"><span class="level-label"></span><strong class="level-title"></strong></span><span class="level-status"></span><span class="chevron">+</span>
+        </button>
+        <div class="level-body"></div>
+      </article>
+    </template>
+    <script src="app.js"></script>
+  </body>
+</html>
